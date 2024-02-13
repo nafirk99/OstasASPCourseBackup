@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\OstadASPCourse\\RegistrationLoginProject\\RegistrationLoginProject.csproj": {}
+    "D:\\OstasASPCourseBackup\\RegistrationLoginProject (sp class)\\RegistrationLoginProject.csproj": {}
   },
   "projects": {
-    "D:\\OstadASPCourse\\RegistrationLoginProject\\RegistrationLoginProject.csproj": {
+    "D:\\OstasASPCourseBackup\\RegistrationLoginProject (sp class)\\RegistrationLoginProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\OstadASPCourse\\RegistrationLoginProject\\RegistrationLoginProject.csproj",
+        "projectUniqueName": "D:\\OstasASPCourseBackup\\RegistrationLoginProject (sp class)\\RegistrationLoginProject.csproj",
         "projectName": "RegistrationLoginProject",
-        "projectPath": "D:\\OstadASPCourse\\RegistrationLoginProject\\RegistrationLoginProject.csproj",
+        "projectPath": "D:\\OstasASPCourseBackup\\RegistrationLoginProject (sp class)\\RegistrationLoginProject.csproj",
         "packagesPath": "C:\\Users\\plicl\\.nuget\\packages\\",
-        "outputPath": "D:\\OstadASPCourse\\RegistrationLoginProject\\obj\\",
+        "outputPath": "D:\\OstasASPCourseBackup\\RegistrationLoginProject (sp class)\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\plicl\\AppData\\Roaming\\NuGet\\NuGet.Config",
