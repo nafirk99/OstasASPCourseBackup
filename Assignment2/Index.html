@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="icon" type="image/x-icon" href="loginfavicon.png"> <!-- Favicon Icon -->
+    <link rel="stylesheet" type="text/css" href="Style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        // A $( document ).ready() block.
+        $( document ).ready(function() {
+        console.log( "ready!" );
+        });
+    </script>
+<script>
+    function validateForm() {
+        let username = document.forms['form1']['username'].value;
+        let password = document.forms['form1']['password'].value;
+
+        if (username == "") {
+            alert("Please Enter Username");
+            return false;
+        }
+
+        if (password == "") {
+            alert("Please Enter Password");
+            return false;
+        }
+
+        // If both username and password are filled, show a success alert
+        alert("Validation successful! Form submitted.");
+        return true;  // Allow form submission
+    }
+</script>
+</head>
+<body>    
+    <center> <h1> User Login Form </h1> </center>   
+    <form name="form1" onsubmit="return validateForm()" method="post">  
+        <div class="container">   
+            <label><b>Username : </b></label>   
+            <input type="text" placeholder="Enter Username" name="username" >  
+            <label><b>Password : </b></label>   
+            <input type="password" placeholder="Enter Password" name="password" >  
+            <button type="submit"><b>Login</b></button>  
+            
+            <input type="checkbox" checked="checked"> Remember me   
+              
+            &nbsp;&nbsp;&nbsp;Forgot <a href="#"> password? </a>   
+        </div> 
+        
+    </form>     
+</body>     
+</html>

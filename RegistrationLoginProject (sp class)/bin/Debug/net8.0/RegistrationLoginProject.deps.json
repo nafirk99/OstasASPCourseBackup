@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "RegistrationLoginProject/1.0.0": {
+        "runtime": {
+          "RegistrationLoginProject.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "RegistrationLoginProject/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
