@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="Style.css">
+  <style>
+    /* Setting height of the grid so .sidenav can be 110% (Will adjust as needed) */
+    .row.content {height: 550px}
+    
+    /* Setting gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 110%;
+    }
+        
+    /* On small screens, set height to 'auto' for the grid */
+    @media screen and (max-width: 767px) {
+      .row.content {height: auto;} 
+    }
+	
+	/* Removing the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse topNav">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Inventory</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<nav class="navbar navbar-inverse visible-xs">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"><img src="icons8-dashboard-layout-48.png" alt="Dashboard Icon" width="30px" height="30px"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Dashboard</a></li>
+        <li><a href="#">Acount</a></li>
+        <li><a href="#">Category</a></li>
+        <li><a href="#">Inventory</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav hidden-xs">
+      <a><img src="icons8-dashboard-layout-48.png" alt="Dashboard Icon" width="40px" height="40px"><p class="heading"><b>Inventory Management</b></p></a>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="#section1">Dashboard</a></li>
+        <li><a href="#section2">Account</a></li>
+        <li><a href="#section3">Category</a></li>
+        <li><a href="#section3">Inventory</a></li>
+		<li><a href="#section3">Payment</a></li>
+		<li><a href="#section3">Pay Permium</a></li>
+		<li><a href="#section3">Original Report</a></li>
+		<li><a href="#section3">Yearly Report</a></li>
+		<li><a href="#section3">Premium Calculation</a></li>
+		<li><a href="#section3">Global</a></li>
+		<li><a href="#section3">Produtcs</a></li>
+		<li><a href="#section3">About Us</a></li>
+      </ul><br>
+    </div>
+    <br>
+    
+    <div class="col-sm-9">
+      <div class="well">
+        <h4>Dashboard</h4>
+        <p>My Content Goes Here..</p>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Users</h4>
+            <p>1 Million</p> 
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Pages</h4>
+            <p>100 Million</p> 
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Sessions</h4>
+            <p>10 Million</p> 
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Profit</h4>
+            <p>30%</p> 
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="well">
+            <p>Content Goes Here</p> 
+            <p>Content Goes Here</p> 
+            <p>Content Goes Here</p> 
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="well">
+            <p>Content Goes Here</p> 
+            <p>Content Goes Here</p> 
+            <p>Content Goes Here</p> 
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="well">
+            <p>Content Goes Here</p> 
+            <p>Content Goes Here</p> 
+            <p>Content Goes Here</p> 
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="well">
+            <p>Content Goes Here</p> 
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="well">
+            <p>Content Goes Here</p> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
