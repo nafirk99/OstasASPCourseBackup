@@ -1,4 +1,5 @@
-﻿@{
+﻿@using WebApplication1.Models
+@{
     ViewBag.Title = "Contact";
 }
 <main aria-labelledby="title">
@@ -17,3 +18,19 @@
         <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
     </address>
 </main>
+
+@{ 
+    //string Name = WebApplication1.Models.TestModel.GetName();
+    string Name = TestModel.GetName();
+}
+@Html.Raw(Name)
+@{ 
+    if (1==1)
+    {
+        <p>This Is 1==1</p>
+    }
+    else
+    {
+        <p>This Is 1==2</p>
+    }
+}

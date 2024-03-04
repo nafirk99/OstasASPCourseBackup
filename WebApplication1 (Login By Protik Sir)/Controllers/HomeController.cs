@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
@@ -15,6 +16,8 @@ namespace WebApplication1.Controllers
 
         public ActionResult Dashboard()
         {
+            List<BaseEquipment> plstData = BaseEquipment.ListEquipmentData();
+            ViewBag.plstData = plstData;
             return View();
         }
 
