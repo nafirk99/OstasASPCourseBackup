@@ -31,29 +31,39 @@
     }
 </style>
 
-@{
-    List<BaseEquipment> pListData = (List<BaseEquipment>)ViewBag.plstData;
-    <div id="dvTableBorder">
-        <h4>Equipment List</h4>
-        <table>
-            <tr>
-                <th>Name</th>
-                <th>EcCount</th>
-                <th>EntryDate</th>
-            </tr>
 
-            @foreach (var item in pListData)
-            {
-                <tr class="clsTrContent">
-                    <td>@item.Name</td>
-                    <td>@item.EcCount</td>
-                    <td>@item.EntryDate.ToString()</td>
+<form action="/Home/Dashboard">
+    @{
+        List<BaseEquipment> pListData = (List<BaseEquipment>)ViewBag.plstData;
+        <div id="dvTableBorder">
+            <h4>Equipment List</h4>
+            Name <input type="text" id="txtName" name="txtName" />
+            <input type="submit" value="Search" />
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>EcCount</th>
+                    <th>EntryDate</th>
                 </tr>
-            }
-        </table>
-    </div>
-    
-}
+
+                @foreach (var item in pListData)
+                {
+                    if (item.EcCount < 30)
+                    {
+                        <tr class="clsTrContent">
+                            <td>@item.Name</td>
+                            <td>@item.EcCount</td>
+                            <td>@item.EntryDate.ToString()</td>
+                        </tr>
+                    }
+
+                }
+            </table>
+        </div>
+
+    }
+
+</form>
 
 
 
