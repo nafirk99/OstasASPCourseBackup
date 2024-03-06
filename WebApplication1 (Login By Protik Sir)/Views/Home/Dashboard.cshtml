@@ -29,41 +29,66 @@
         overflow:auto;
         border: 1px solid #000000;
     }
+    .containerFlexx{
+        display:inline-flex;
+        margin: 10px;
+        
+    }
 </style>
 
+<div class="containerFlexx">
 
-<form action="/Home/Dashboard">
-    @{
-        List<BaseEquipment> pListData = (List<BaseEquipment>)ViewBag.plstData;
-        <div id="dvTableBorder">
-            <h4>Equipment List</h4>
-            Name <input type="text" id="txtName" name="txtName" />
-            <input type="submit" value="Search" />
-            <table>
-                <tr>
-                    <th>Name</th>
-                    <th>EcCount</th>
-                    <th>EntryDate</th>
-                </tr>
+    <form action="/Home/Dashboard">
+        @{
+            List<BaseEquipment> pListData = (List<BaseEquipment>)ViewBag.plstData;
+            <div id="dvTableBorder">
+                <h4>Equipment List</h4>
+                Name <input type="text" id="txtName" name="txtName" />
+                <input type="submit" value="Search" />
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>EcCount</th>
+                        <th>EntryDate</th>
+                    </tr>
 
-                @foreach (var item in pListData)
-                {
-                    if (item.EcCount < 30)
+                    @foreach (var item in pListData)
                     {
-                        <tr class="clsTrContent">
-                            <td>@item.Name</td>
-                            <td>@item.EcCount</td>
-                            <td>@item.EntryDate.ToString()</td>
-                        </tr>
+                        if (item.EcCount < 30)
+                        {
+                            <tr class="clsTrContent">
+                                <td>@item.Name</td>
+                                <td>@item.EcCount</td>
+                                <td>@item.EntryDate.ToString()</td>
+                            </tr>
+                        }
+
                     }
+                </table>
+            </div>
 
+        }
+    </form>
+
+
+    <div style="height:200px; width:350px;  border: 1px solid red; overflow:auto;">
+        <h4>Employee List</h4>
+        Sort: <input type="text" id="emploinpt" />
+        <input type="submit" value="Search"/>
+        <table>
+            @{ List<Employee> employees = (List<Employee>)ViewBag.employees;
+
+                foreach (var obj in employees)
+                {
+                    <tr class="clsTrContent">
+                        <td>@obj.Name</td>
+                        <td>@obj.Age</td>
+                        <td>@obj.BirthDate</td>
+                    </tr>
                 }
-            </table>
-        </div>
-
-    }
-
-</form>
-
+            }
+        </table>
+    </div>
+</div>
 
 

@@ -18,6 +18,9 @@ namespace WebApplication1.Controllers
         {
             List<BaseEquipment> plstData = BaseEquipment.ListEquipmentData();
             ViewBag.plstData = plstData;
+
+            List<Employee> employees = Employee.GetEmployee();
+            ViewBag.employees = employees;
             return View();
         }
 
