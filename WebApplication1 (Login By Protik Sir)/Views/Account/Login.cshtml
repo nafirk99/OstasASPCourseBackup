@@ -13,59 +13,63 @@
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
-    <div style="width: 400px; height: 500px; border: 1px solid blue; border-radius: 5px; position: absolute; top: 0px; bottom: 0px; right: 0px; left: 0px;margin:auto;"> 
-        <div class="content">
-            <div class="row" style="padding: 5px;">
-                <div class="col col-sm-12" >
-                    <h4 style="text-align:center">Log In</h4>
+    @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+    {
+        <div style="width: 400px; height: 500px; border: 1px solid blue; border-radius: 5px; position: absolute; top: 0px; bottom: 0px; right: 0px; left: 0px;margin:auto;">
+            <div class="content">
+                <div class="row" style="padding: 5px;">
+                    <div class="col col-sm-12">
+                        <h4 style="text-align:center">Log In</h4>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col col-sm-2">
+                <div class="row">
+                    <div class="col col-sm-2">
+                    </div>
+                    <div class="col col-sm-8">
+                        Username
+                    </div>
+                    <div class="col col-sm-2">
+                    </div>
                 </div>
-                <div class="col col-sm-8" >
-                    Username
+                <div class="row">
+                    <div class="col col-sm-2">
+                    </div>
+                    <div class="col col-sm-8">
+                        <input type="text" placeholder="UserName" style="width:100%;" />
+                    </div>
+                    <div class="col col-sm-2">
+                    </div>
                 </div>
-                <div class="col col-sm-2">
+                <div class="row">
+                    <div class="col col-sm-2">
+                    </div>
+                    <div class="col col-sm-8">
+                        Password
+                    </div>
+                    <div class="col col-sm-2">
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col col-sm-2">
+                <div class="row">
+                    <div class="col col-sm-2">
+                    </div>
+                    <div class="col col-sm-8">
+                        <input type="text" placeholder="Password" style="width:100%;" />
+                    </div>
+                    <div class="col col-sm-2">
+                    </div>
                 </div>
-                <div class="col col-sm-8">
-                    <input type="text" placeholder="UserName" style="width:100%;"/>
-                </div>
-                <div class="col col-sm-2">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col col-sm-2">
-                </div>
-                <div class="col col-sm-8">
-                    Password
-                </div>
-                <div class="col col-sm-2">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col col-sm-2">
-                </div>
-                <div class="col col-sm-8">
-                    <input type="text"  placeholder="Password" style="width:100%;"/>
-                </div>
-                <div class="col col-sm-2">
-                </div>
-            </div>
-            <div class="row" style="padding: 5px 0px;">
-                <div class="col col-sm-2">
-                </div>
-                <div class="col col-sm-8">
-                    <input type="button" value="Log In" style="width:100%;"/>
-                </div>
-                <div class="col col-sm-2">
+                <div class="row" style="padding: 5px 0px;">
+                    <div class="col col-sm-2">
+                    </div>
+                    <div class="col col-sm-8">
+                        <input type="submit" id="btnLogin" value="LogIn" name="btnSubmit" style="width:100%;" />
+                        <input type="submit" id="btnReset" value="Reset" name="btnSubmit" style="width:100%;" />
+                    </div>
+                    <div class="col col-sm-2">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    }
 </body>
 </html>

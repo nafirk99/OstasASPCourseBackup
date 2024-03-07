@@ -38,13 +38,14 @@
 
 <div class="containerFlexx">
 
-    <form action="/Home/Dashboard">
+    <form action="/Home/Dashboard" method="post">
         @{
             List<BaseEquipment> pListData = (List<BaseEquipment>)ViewBag.plstData;
             <div id="dvTableBorder">
                 <h4>Equipment List</h4>
                 Name <input type="text" id="txtName" name="txtName" />
-                <input type="submit" value="Search" />
+                <input type="submit" value="Search" name="btnSubmit"/>
+                <input type="submit" value="Clear" name="btnSubmit"/>
                 <table>
                     <tr>
                         <th>Name</th>
@@ -54,7 +55,18 @@
 
                     @foreach (var item in pListData)
                     {
-                        if (item.EcCount < 30)
+                        if (ViewBag.txtname != "")
+                        {
+                            if (item.Name == ViewBag.txtName)
+                            {
+                                <tr class="clsTrContent">
+                                    <td>@item.Name</td>
+                                    <td>@item.EcCount</td>
+                                    <td>@item.EntryDate.ToString()</td>
+                                </tr>
+                            }
+                        }
+                        else
                         {
                             <tr class="clsTrContent">
                                 <td>@item.Name</td>
@@ -62,33 +74,48 @@
                                 <td>@item.EntryDate.ToString()</td>
                             </tr>
                         }
-
                     }
                 </table>
             </div>
-
         }
     </form>
 
+    <form action="/Home/Dashboard" method="post">
+        <div style="height:200px; width:350px;  border: 1px solid red; overflow:auto;">
+            <h4>Employee List</h4>
+            Sort: <input type="text" id="txtEmployee" name="txtEmployee" />
+            <input type="submit" value="Search" name="btnSbmitEmp"/>
+            <input type="submit" value="Clear" name="btnSbmitEmp"/>
+            <table>
+                @{ List<Employee> employees = (List<Employee>)ViewBag.employees;
 
-    <div style="height:200px; width:350px;  border: 1px solid red; overflow:auto;">
-        <h4>Employee List</h4>
-        Sort: <input type="text" id="emploinpt" />
-        <input type="submit" value="Search"/>
-        <table>
-            @{ List<Employee> employees = (List<Employee>)ViewBag.employees;
+                    foreach (var obj in employees)
+                    {
+                        if (ViewBag.txtEmployee != "")
+                        {
+                            if (obj.Name == ViewBag.txtEmployee)
+                            {
+                                <tr class="clsTrContent">
+                                    <td>@obj.Name</td>
+                                    <td>@obj.Age</td>
+                                    <td>@obj.BirthDate</td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                                <tr class="clsTrContent">
+                                    <td>@obj.Name</td>
+                                    <td>@obj.Age</td>
+                                    <td>@obj.BirthDate</td>
+                                </tr>
+                        }
 
-                foreach (var obj in employees)
-                {
-                    <tr class="clsTrContent">
-                        <td>@obj.Name</td>
-                        <td>@obj.Age</td>
-                        <td>@obj.BirthDate</td>
-                    </tr>
+                    }
                 }
-            }
-        </table>
-    </div>
+            </table>
+        </div>
+    </form>
 </div>
 
 

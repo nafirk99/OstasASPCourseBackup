@@ -19,11 +19,14 @@ namespace WebApplication1.Models
         public static List<Employee> GetEmployee()
         {
             List<Employee> listOfEmployee = new List<Employee>();
+            Random random = new Random();
             for (int i = 0; i<50; i++)
             {
+                
                 Employee employee = new Employee();
                 employee.Name = "Employee-" + i.ToString();
-                employee.Age = i;
+                int a = random.Next(21,50);
+                employee.Age =a; 
                 employee.BirthDate = DateTime.Now;
                 listOfEmployee.Add(employee);
             }
