@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
@@ -14,12 +15,12 @@ namespace WebApplication1.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Login(string btnSubmit, string txtUserName, string txtPassword)
+        public ActionResult Login(string btnSubmit, BaseAccount baseAccount)
         {
             string LoginMsg = "";
             if (btnSubmit == "LogIn")
             {
-                if(txtUserName == "Nafi" && txtPassword == "123456")
+                if(baseAccount.UserName == "Nafi" && baseAccount.Password == "123456")
                 {
                     Session["User"] = "Nafi";
                     return RedirectToAction("Dashboard", "Home");
