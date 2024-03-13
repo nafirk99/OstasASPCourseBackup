@@ -20,16 +20,19 @@ namespace WebApplication1.Controllers
             string LoginMsg = "";
             if (btnSubmit == "LogIn")
             {
-                if(baseAccount.UserName == "Nafi" && baseAccount.Password == "123456")
+                bool verifyStatus = baseAccount.VerifyLogin();
+                if (verifyStatus)
                 {
-                    Session["User"] = "Nafi";
+                    Session["User"] = baseAccount.UserName;
+                    LoginMsg = "Login Success";
                     return RedirectToAction("Dashboard", "Home");
                 }
+
                 else
                 {
                     LoginMsg = "Failed, UserName/Password Did Not Match";
                 }
-                 
+
             }
             else if (btnSubmit == "Forget Password")
             {
