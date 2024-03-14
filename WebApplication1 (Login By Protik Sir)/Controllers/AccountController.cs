@@ -20,7 +20,7 @@ namespace WebApplication1.Controllers
             string LoginMsg = "";
             if (btnSubmit == "LogIn")
             {
-                bool verifyStatus = baseAccount.VerifyLogin();
+                bool verifyStatus = baseAccount.VerifyLogin(); 
                 if (verifyStatus)
                 {
                     Session["User"] = baseAccount.UserName;
