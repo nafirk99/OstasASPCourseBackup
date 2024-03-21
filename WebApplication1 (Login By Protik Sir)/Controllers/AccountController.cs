@@ -30,7 +30,7 @@ namespace WebApplication1.Controllers
 
                 else
                 {
-                    LoginMsg = "Failed, UserName/Password Did Not Match ";
+                    LoginMsg = "Failed, UserName/Password Did Not Match";
                 }
 
             }
