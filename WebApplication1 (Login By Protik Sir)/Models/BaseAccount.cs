@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
@@ -13,6 +14,14 @@ namespace WebApplication1.Models
         public bool VerifyLogin()
         {
             string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
+            
+            SqlConnection sqlConnection = new SqlConnection(ConnString);
+            sqlConnection.Open();
+
+            SqlCommand cmd = sqlConnection.CreateCommand();
+            cmd.CommandText = "";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandTimeout = 0;
 
             if (this.UserName == "Nafi" && this.Password == "123456")
             {
