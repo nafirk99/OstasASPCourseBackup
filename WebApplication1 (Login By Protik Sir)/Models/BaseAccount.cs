@@ -16,23 +16,48 @@ namespace WebApplication1.Models
         {
             DataTable dataTable = new DataTable();
             string ConnString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
-            
-            SqlConnection sqlConnection = new SqlConnection(ConnString);
-            sqlConnection.Open();
+            //string Appname = ConfigurationManager.AppSettings["ApplicationName"].ToString();
 
-            SqlCommand cmd = sqlConnection.CreateCommand();
-            cmd.CommandText = "";
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            SqlConnection connection = new SqlConnection(ConnString);
+            connection.Open();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = connection;
+            cmd.CommandText = "dbo.spOst_LstMember";      // Temporary, Stored Procedure Hasn't Created Yet     "dbo.spOst_LstMember"   CommandType.StoredProcedure;
+            cmd.Parameters.Clear();
+            cmd.Parameters.Add(new SqlParameter("@UserName", this.UserName));
+            cmd.Parameters.Add(new SqlParameter("@Password", this.Password));
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandTimeout = 0;
+
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dataTable);
             cmd.Dispose();
-            sqlConnection.Close();
+            connection.Close();
 
-            if (this.UserName == "Nafi" && this.Password == "123456")
+            if (dataTable.Rows.Count>0)
             {
-               return true;
+                return true;
             }
+
+            //var pdata = (from p in dataTable.AsEnumerable()
+            //             where p.Field<string>("Name") == this.UserName && p.Field<string>("Password") == this.Password
+            //             select new
+            //             {
+            //                 UserName = p.Field<string>("Name")
+            //             }
+            //             ).SingleOrDefault();
+
+            //if (pdata != null)
+            //{
+            //    return true;
+            //}
+
+            //if (this.UserName == "Nafi" && this.Password == "123456")
+            //{
+            //   return true;
+            //}
             return false;
         }
     }
